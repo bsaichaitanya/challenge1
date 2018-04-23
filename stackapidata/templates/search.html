@@ -1,0 +1,72 @@
+<!-- our search template -->
+{% extends "home.html" %}
+{% load static %}
+
+{% block css %}
+	<style type="text/css">
+    .inputrow{
+        padding-top: 15px;
+    }
+    .datarow{
+    	padding-top: 15px;
+    }
+    .ourjson{
+    	padding-top: 25px;
+    }
+    #ourjson{
+    	overflow-y: : scroll;
+    	overflow-x: scroll;
+    	height :400px;
+    }
+
+  	</style>
+
+{% endblock %}
+
+{% block js %}
+
+<script type="text/javascript" src="{% static 'search_js.js' %}"></script>
+{% endblock %}
+
+{% block content %}
+
+
+
+<div class="container">
+	<h3>Our JSon Query Data</h3>
+  <div class="row inputrow">
+      <div class="col-lg-offset-1 col-lg-3 col-md-offset-1 col-md-3">
+        <label>Title</label>
+        <input type="input" name="title" id="title" placeholder="search full title or a word to search for in title">
+        
+       
+      </div>
+      
+   </div>
+
+   <div class="row inputrow">
+      <div class="col-lg-offset-1 col-lg-3 col-md-offset-1 col-md-3">
+        <label>Link</label>
+
+        <input type="input" name="link" id="link" placeholder="search full link or a word to search for in string">
+        
+       
+      </div>
+    </div>
+    <div class="row inputrow">
+    	<div class="col-lg-offset-1 col-lg-3 col-md-offset-1 col-md-3">
+    		<button id="run">Run</button>
+    	</div>
+    </div>
+    <div class="ourjson">
+	    <p>our json</p>
+	    <pre id="ourjson"></pre>
+	</div>
+
+    <div class="row datarow">
+    	
+    </div>
+
+</div>
+
+{% endblock %} 

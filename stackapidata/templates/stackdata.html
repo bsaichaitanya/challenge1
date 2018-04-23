@@ -1,0 +1,125 @@
+<!-- stackoverflow json query template -->
+{% extends "home.html" %}
+
+{% load static %}
+
+{% block css %}
+	<style type="text/css">
+    .inputrow{
+        padding-top: 15px;
+    }
+  </style>
+
+{% endblock %}
+
+{% block js %}
+
+<script type="text/javascript" src="{% static 'custom_js.js' %}"></script>
+{% endblock %}
+
+{% block content %}
+<div class="container">
+  <h3>StackOverflow Json Query Data</h3>
+  <div class="row inputrow">
+      <div class="col-lg-offset-1 col-lg-3 col-md-offset-1 col-md-3">
+        <label>Page</label>
+        <input type="input" name="page" id="page" placeholder="use only integer below 999">
+        
+       
+      </div>
+
+      <div class="col-lg-3 col-md-3">
+        <label>PageSize</label>
+
+        <input type="input" name="pagesize" id="pagesize" placeholder="use only interger below 999">
+      </div>
+
+      <div class="col-lg-3 col-md-3">
+         <label>fromdate</label>
+
+        <input type="input" name="fromdate" id="fromdate" placeholder="select from date">
+      </div>
+   </div> 
+
+
+   <div class="row inputrow">
+      <div class="col-lg-offset-1 col-lg-3 col-md-offset-1 col-md-3">
+       <label>todate</label>
+
+        <input type="input" id="todate" name="todate" placeholder="select to date">
+       
+      </div>
+
+      <div class="col-lg-3 col-md-3">
+        <label>order</label>
+
+        <select id = "order">
+          <option value = "1">asc</option>
+          <option value = "2">desc</option>
+        </select>
+      </div>
+
+      <div class="col-lg-3 col-md-3">
+        <label>min</label>
+
+        <input type="input" id="min" name="min">
+      </div>
+   </div> 
+
+   <div class="row inputrow">
+      <div class="col-lg-offset-1 col-lg-3 col-md-offset-1 col-md-3">
+        <label>max</label>
+
+        <input type="input" id="max" name="max">
+       
+      </div>
+
+      <div class="col-lg-3 col-md-3">
+        <label>sort</label>
+
+        <select id = "sortorder">
+          <option value = "1">activity</option>
+          <option value = "2">votes</option>
+          <option value = "3">creation</option>
+          <option value = "4">hot</option>
+          <option value = "5">week</option>
+          <option value = "6">month</option>
+        </select>
+      </div>
+
+      <div class="col-lg-3 col-md-3">
+        <label>Tagged</label>
+
+        <input type="input" name="tagged" id="tagged" placeholder="type a tag">
+
+      </div>
+   </div> 
+
+   <div class="row inputrow">
+     <div class="col-lg-offset-5 col-md-offset-4 col-lg-3 col-md-3"> 
+       <button class="btn btn-lg" id="run">Run</button>
+     </div>
+   </div>
+</div> 
+
+
+<div class="row">
+  <div class="col-lg-offset-2 col-lg-7 col-lmd-offset-2 col-md-8">
+    <p>result:</p>
+    <pre id="results" style="height: 450px; overflow-y: scroll; overflow-x: scroll"></pre>
+
+  </div>
+
+</div>
+
+<div class="container">
+  <div class="row datarow">
+  
+  </div>
+</div>
+  
+
+
+
+
+{% endblock %}
